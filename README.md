@@ -1,63 +1,20 @@
 # 🎥 AI Surveillance System
 
-> AI-powered real-time surveillance system for detecting people and vehicles, monitoring restricted areas, and generating intelligent security alerts.
-
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![YOLO](https://img.shields.io/badge/YOLO-v11-green)
-![OpenCV](https://img.shields.io/badge/OpenCV-4.x-red)
-![Streamlit](https://img.shields.io/badge/Streamlit-Live%20Dashboard-orange)
+An AI-powered real-time surveillance platform that detects people and vehicles, monitors restricted zones, and generates intelligent alerts for security events such as intrusion, loitering, crowd formation, and wrong-direction movement.
 
 ---
 
-# 📌 Overview
-
-AI Surveillance System is an intelligent video analytics platform built using YOLO, OpenCV, and Streamlit.
-
-The system performs:
-
-* Real-time object detection
-* Multi-object tracking
-* Intrusion detection
-* Loitering detection
-* Crowd detection
-* Wrong-direction detection
-* CCTV monitoring through RTSP streams
-* Vehicle and person analytics
-
-Suitable for:
-
-* Smart Cities
-* Airports
-* Railway Stations
-* Campuses
-* Industrial Areas
-* Shopping Malls
-* Parking Lots
-* Restricted Security Zones
-
----
-
-# ✨ Features
+# 🚀 Features
 
 ## Object Detection
 
-Detects:
+Using YOLO11, the system can detect:
 
-| Class      | Supported |
-| ---------- | --------- |
-| Person     | ✅         |
-| Car        | ✅         |
-| Motorcycle | ✅         |
-| Bus        | ✅         |
-| Truck      | ✅         |
-
-Powered by YOLO11 models:
-
-* YOLO11n (Fastest)
-* YOLO11s
-* YOLO11m
-* YOLO11l
-* YOLO11x (Highest Accuracy)
+* Person
+* Car
+* Motorcycle
+* Bus
+* Truck
 
 ---
 
@@ -65,11 +22,11 @@ Powered by YOLO11 models:
 
 ### 🚨 Intrusion Detection
 
-Detects when a person or vehicle enters a restricted zone.
+Detects when a person or vehicle enters a restricted area.
 
 ### ⏳ Loitering Detection
 
-Triggers an alert when an object remains inside a zone longer than a configured threshold.
+Triggers alerts when a person remains inside a zone longer than a configured threshold.
 
 ### 👥 Crowd Detection
 
@@ -77,7 +34,7 @@ Detects when the number of people inside a zone exceeds a configured limit.
 
 ### ↔ Wrong Direction Detection
 
-Detects movement opposite to the allowed direction.
+Detects movement against an allowed direction.
 
 Supported directions:
 
@@ -88,66 +45,37 @@ Supported directions:
 
 ---
 
-## Video Sources
+## Supported Video Sources
 
-### Supported Inputs
+### Offline Sources
 
-* MP4 Videos
-* AVI Videos
-* MOV Videos
-* MKV Videos
+* MP4
+* AVI
+* MOV
+* MKV
+
+### Live Sources
+
 * USB Webcam
-* RTSP Cameras
+* RTSP CCTV Cameras
 * RTMP Streams
 * HTTP/MJPEG Streams
 
 ---
 
-## Interactive Zone Management
-
-Create monitoring zones directly on video frames.
-
-Features:
-
-* Polygon based zones
-* Multiple zones
-* Save zones
-* Load zones
-* Editable zone configuration
-
----
-
-# 🖥️ System Requirements
-
-## Minimum
-
-* Windows 10/11
-* Ubuntu 20.04+
-* macOS 11+
-* 8 GB RAM
-* 10 GB Free Storage
-* Python 3.8+
-
-## Recommended
-
-* 16 GB RAM
-* NVIDIA GPU with CUDA support
-* Python 3.10
-
----
-
-# 📂 Project Structure
+# 📂 Repository Structure
 
 ```text
 AI-Surveillance-System/
 │
-├── ui_streamlit.py
-├── complete_detector.py
-├── detector.py
-├── tracker.py
-├── analyzer.py
-├── config.py
+├── ai_surveillance_model/
+│   ├── detector.py
+│   ├── tracker.py
+│   ├── analyzer.py
+│   ├── config.py
 │
+├── complete_detector.py
+├── ui_streamlit.py
 ├── draw_zone_interactive.py
 ├── diagnostic.py
 │
@@ -157,49 +85,127 @@ AI-Surveillance-System/
 ├── setup.sh
 │
 ├── zones.pkl
-│
-└── README.md
+├── README.md
 ```
 
 ---
 
-# 🚀 Installation Guide
+# 💻 System Requirements
 
-## Step 1: Clone Repository
+## Minimum Requirements
+
+| Component | Requirement                             |
+| --------- | --------------------------------------- |
+| OS        | Windows 10/11, Ubuntu 20.04+, macOS 11+ |
+| RAM       | 8 GB                                    |
+| Storage   | 10 GB Free                              |
+| Python    | 3.8 - 3.11                              |
+| Internet  | Required for first model download       |
+
+---
+
+## Recommended Requirements
+
+| Component | Requirement          |
+| --------- | -------------------- |
+| RAM       | 16 GB+               |
+| GPU       | NVIDIA GPU with CUDA |
+| Storage   | SSD                  |
+| Python    | 3.10                 |
+
+---
+
+# 📥 Clone the Repository
+
+## Option 1: Using Git (Recommended)
+
+### Step 1: Install Git
+
+Download Git:
+
+https://git-scm.com/downloads
+
+Verify installation:
 
 ```bash
-git clone https://github.com/yourusername/AI-Surveillance-System.git
+git --version
+```
 
+Expected output:
+
+```text
+git version 2.x.x
+```
+
+---
+
+### Step 2: Clone Repository
+
+Replace with your actual repository URL:
+
+```bash
+git clone https://github.com/USERNAME/AI-Surveillance-System.git
+```
+
+Example:
+
+```bash
+git clone https://github.com/siddharthshetty/AI-Surveillance-System.git
+```
+
+---
+
+### Step 3: Move into Project Folder
+
+```bash
 cd AI-Surveillance-System
 ```
 
 ---
 
-## Step 2: Verify Python
-
-Check Python version:
+### Step 4: Verify Files
 
 ```bash
-python --version
+dir
 ```
+
+Windows
 
 or
 
 ```bash
-python3 --version
+ls
 ```
 
-Required:
+Linux/macOS
+
+You should see:
 
 ```text
-Python 3.8 - 3.11
+complete_detector.py
+ui_streamlit.py
+requirements.txt
+setup.py
+README.md
 ```
+
+---
+
+# 📦 Download ZIP Instead of Git
+
+If you don't want to use Git:
+
+1. Open repository
+2. Click Code
+3. Click Download ZIP
+4. Extract ZIP
+5. Open terminal inside extracted folder
 
 ---
 
 # 🪟 Windows Installation
 
-## Create Virtual Environment
+## Step 1: Create Virtual Environment
 
 ```cmd
 python -m venv venv
@@ -207,7 +213,7 @@ python -m venv venv
 
 ---
 
-## Activate Environment
+## Step 2: Activate Environment
 
 ### Command Prompt
 
@@ -221,7 +227,7 @@ venv\Scripts\activate
 .\venv\Scripts\Activate.ps1
 ```
 
-If PowerShell blocks activation:
+If PowerShell gives an error:
 
 ```powershell
 Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
@@ -231,7 +237,7 @@ Then activate again.
 
 ---
 
-## Upgrade Pip
+## Step 3: Upgrade Pip
 
 ```cmd
 python -m pip install --upgrade pip
@@ -239,7 +245,7 @@ python -m pip install --upgrade pip
 
 ---
 
-## Install Dependencies
+## Step 4: Install Dependencies
 
 ```cmd
 pip install -r requirements.txt
@@ -247,7 +253,7 @@ pip install -r requirements.txt
 
 ---
 
-## Install Local Package
+## Step 5: Install Project Package
 
 ```cmd
 pip install -e .
@@ -255,13 +261,13 @@ pip install -e .
 
 ---
 
-## Verify Installation
+## Step 6: Verify Installation
 
 ```cmd
 python diagnostic.py
 ```
 
-Expected output:
+Expected Output:
 
 ```text
 ✓ Ultralytics
@@ -269,42 +275,67 @@ Expected output:
 ✓ PyTorch
 ✓ FastAPI
 ✓ AI Surveillance Model
+✓ All tests passed
 ```
 
 ---
 
 # 🍎 macOS Installation
 
+## Create Environment
+
 ```bash
 python3 -m venv venv
+```
 
+Activate:
+
+```bash
 source venv/bin/activate
+```
 
+---
+
+## Upgrade Pip
+
+```bash
 python -m pip install --upgrade pip
+```
 
+---
+
+## Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
+---
+
+## Install Package
+
+```bash
 pip install -e .
 ```
 
-Or run:
+---
+
+## Verify
 
 ```bash
-chmod +x setup.sh
-
-./setup.sh
+python diagnostic.py
 ```
 
 ---
 
 # 🐧 Ubuntu/Linux Installation
 
-## Install System Packages
+## Install Python and FFmpeg
 
 ```bash
 sudo apt update
 
-sudo apt install python3-pip python3-venv ffmpeg -y
+sudo apt install python3 python3-pip python3-venv ffmpeg -y
 ```
 
 ---
@@ -313,13 +344,17 @@ sudo apt install python3-pip python3-venv ffmpeg -y
 
 ```bash
 python3 -m venv venv
+```
 
+Activate:
+
+```bash
 source venv/bin/activate
 ```
 
 ---
 
-## Install Requirements
+## Install Dependencies
 
 ```bash
 pip install --upgrade pip
@@ -331,30 +366,19 @@ pip install -e .
 
 ---
 
-# 📦 Required Python Packages
+## Verify Installation
 
-```text
-ultralytics
-opencv-python
-numpy
-torch
-streamlit
-fastapi
-uvicorn
-python-multipart
-pillow
-matplotlib
+```bash
+python diagnostic.py
 ```
 
 ---
 
-# 🎯 First-Time Setup
+# 🤖 First-Time Model Download
 
-When launched for the first time:
+The first time you launch the application, YOLO downloads the selected model automatically.
 
-YOLO automatically downloads the selected model.
-
-Example:
+Examples:
 
 ```text
 yolo11n.pt
@@ -364,13 +388,15 @@ yolo11l.pt
 yolo11x.pt
 ```
 
-Internet connection is required only once.
+Internet is required only once.
+
+Downloaded models are cached automatically.
 
 ---
 
-# ▶ Running the Dashboard
+# ▶ Running the Web Dashboard
 
-## Launch Streamlit UI
+Launch Streamlit:
 
 ```bash
 streamlit run ui_streamlit.py
@@ -384,29 +410,23 @@ http://localhost:8501
 
 ---
 
-# ▶ Running the Console Version
+# ▶ Running the Command-Line Version
 
 ```bash
 python complete_detector.py
-```
-
-You will be asked:
-
-```text
-1. Object Type
-2. Direction
-3. Loitering Time
-4. Crowd Threshold
-5. Confidence Threshold
-6. YOLO Model
-7. Video Source
 ```
 
 ---
 
 # 🎥 Using a Video File
 
-Example:
+Select:
+
+```text
+Video File
+```
+
+Then provide:
 
 ```text
 C:\Videos\sample.mp4
@@ -434,22 +454,30 @@ Supported formats:
 Select:
 
 ```text
-Video Source → Webcam
+Webcam
 ```
 
-The system automatically detects available cameras.
+The system automatically detects connected cameras.
 
 ---
 
-# 📡 Using RTSP CCTV Camera
+# 📡 Using RTSP CCTV Cameras
 
-Example:
+Example URLs:
+
+## Hikvision
 
 ```text
-rtsp://username:password@192.168.1.100:554/Streaming/Channels/101
+rtsp://username:password@ip:554/Streaming/Channels/101
 ```
 
-or
+## Dahua
+
+```text
+rtsp://username:password@ip:554/cam/realmonitor?channel=1&subtype=0
+```
+
+## Generic
 
 ```text
 rtsp://admin:admin123@192.168.1.10:554/live
@@ -459,75 +487,93 @@ rtsp://admin:admin123@192.168.1.10:554/live
 
 # 🗺️ Creating Monitoring Zones
 
-Option 1:
+## Method 1: Interactive Zone Drawing Tool
 
-Use the built-in interactive zone editor.
+Run:
 
 ```bash
 python draw_zone_interactive.py
 ```
 
-Instructions:
+Controls:
 
-* Left Click → Add Point
-* Right Click → Save Zone
-* C → Clear
-* R → Reset
-* Q → Quit
+| Key         | Action             |
+| ----------- | ------------------ |
+| Left Click  | Add Point          |
+| Right Click | Save Zone          |
+| C           | Clear Current Zone |
+| R           | Reset All Zones    |
+| S           | Save Zones         |
+| L           | Load Zones         |
+| Q           | Exit               |
 
 ---
 
-Option 2:
+## Method 2: Streamlit Dashboard
 
-Create zones from the Streamlit dashboard.
-
-Example:
+Example coordinates:
 
 ```text
 100,100 500,100 500,400 100,400
 ```
 
+Minimum 3 points required.
+
 ---
 
-# ⚙️ Performance Optimization
+# ⚡ Performance Tuning
 
-## Low-End PC
-
-Use:
+## Low-End Systems
 
 ```text
-YOLO11n
-Confidence = 0.3
-Frame Skip = 5
+Model: YOLO11n
+Confidence: 0.3
+Frame Skip: 5
 ```
 
 ---
 
-## Mid-Range PC
-
-Use:
+## Mid-Range Systems
 
 ```text
-YOLO11m
-Confidence = 0.4
-Frame Skip = 2
+Model: YOLO11m
+Confidence: 0.4
+Frame Skip: 2
 ```
 
 ---
 
-## High-End GPU
-
-Use:
+## High-End GPU Systems
 
 ```text
-YOLO11x
-Confidence = 0.5
-Frame Skip = 1
+Model: YOLO11x
+Confidence: 0.5
+Frame Skip: 1
 ```
 
 ---
 
 # 🧪 Troubleshooting
+
+## Python Not Found
+
+```text
+'python' is not recognized
+```
+
+Fix:
+
+Install Python:
+
+https://python.org/downloads
+
+Check:
+
+```bash
+python --version
+```
+
+---
 
 ## OpenCV Error
 
@@ -551,7 +597,7 @@ pip install streamlit
 
 ---
 
-## CUDA Not Detected
+## CUDA Not Working
 
 Verify:
 
@@ -559,60 +605,54 @@ Verify:
 python -c "import torch; print(torch.cuda.is_available())"
 ```
 
+Expected:
+
+```text
+True
+```
+
 ---
 
-## RTSP Not Working
+## RTSP Camera Not Connecting
 
 Check:
 
 * Camera IP
 * Username
 * Password
-* Firewall
 * Port 554
+* Firewall Rules
 
-Test URL using VLC first.
-
----
-
-## Model Download Failed
-
-Download manually:
-
-```bash
-yolo11n.pt
-yolo11s.pt
-yolo11m.pt
-```
-
-Place them in project root directory.
+Test URL first using VLC Media Player.
 
 ---
 
-# 📈 Future Improvements
+# 📈 Future Enhancements
 
-* Email Alerts
-* SMS Alerts
-* WhatsApp Alerts
 * Face Recognition
 * License Plate Recognition
-* Heatmaps
+* Email Alerts
+* WhatsApp Alerts
+* SMS Notifications
 * Cloud Storage
-* Multi-Camera Dashboard
 * Database Logging
-* REST API Integration
+* REST APIs
+* Multi-Camera Dashboard
+* Heatmaps
+* Object Re-Identification
 
 ---
 
 # 👨‍💻 Author
 
-Developed as an AI-powered surveillance and video analytics platform using:
+Siddharth Shetty
+
+Built with:
 
 * Python
 * YOLO11
 * OpenCV
-* Streamlit
 * PyTorch
+* Streamlit
 
 ---
-
