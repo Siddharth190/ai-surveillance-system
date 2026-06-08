@@ -1,0 +1,21 @@
+# Python 
+__pycache__/ 
+*.pyc 
+*.pyo 
+*.pyd 
+.Python 
+env/ 
+venv/ 
+.venv/ 
+*.so 
+*.egg 
+*.egg-info/ 
+dist/ 
+build/ 
+.DS_Store 
+.vscode/ 
+.idea/ 
+*.pkl 
+screenshots/ 
+events_export.json 
+.env 
