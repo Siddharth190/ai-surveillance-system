@@ -141,16 +141,9 @@ git version 2.x.x
 
 ### Step 2: Clone Repository
 
-Replace with your actual repository URL:
 
 ```bash
-git clone https://github.com/USERNAME/AI-Surveillance-System.git
-```
-
-Example:
-
-```bash
-git clone https://github.com/siddharthshetty/AI-Surveillance-System.git
+git clone https://github.com/Siddharth190/ai-surveillance-system
 ```
 
 ---
